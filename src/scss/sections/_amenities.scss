@@ -1,0 +1,107 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ==================
+        Amenities 
+   ================== */
+.amenities {
+  background-color: var(--darker-background);
+  margin-top: 150px;
+  overflow: hidden;
+  padding-bottom: $sectionPadding;
+  padding-top: $sectionPadding;
+  .content {
+    box-shadow: var(--card-box-shadow);
+    width: 75%;
+    margin: auto;
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+    .main-heading {
+      margin: 0 auto;
+      h3 {
+        padding: 20px 35px;
+        border-radius: 0 0 15px 15px;
+      }
+    }
+    .amenities-text {
+      overflow: hidden;
+      flex-basis: 50%;
+      order: 2;
+      .text-content {
+        margin: auto;
+        p {
+          color: var(--dark-text-color);
+          font-size: 14px;
+        }
+      }
+      .lists {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: var(--mb-16);
+        li {
+          margin: 25px 30px;
+          position: relative;
+          text-align: center;
+          font-size: 14px;
+          text-transform: capitalize;
+          &:before {
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 0.5px;
+            bottom: -7px;
+            left: -7px;
+            background-color: rgb(231, 228, 228);
+          }
+        }
+        i {
+          color: var(--green-color);
+          margin-right: 5px;
+        }
+      }
+      .description {
+        padding: 25px 45px;
+        background-color: var(--black-background);
+        h5 {
+          font-weight: 600;
+          color: var(--green-color);
+        }
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        color: var(--white-color);
+        background-color: var(--green-color);
+        border-radius: 0 0 10px 0;
+
+        &:hover {
+          color: var(--green-color);
+          background-color: var(--white-color);
+        }
+      }
+    }
+    .amenities-img {
+      background-image: url("../../../dist/assets/images/benefits01.jpg");
+      background-position: center;
+      background-size: cover;
+      flex-basis: 50%;
+      border-radius: 10px 0 0 10px;
+      order: 1;
+    }
+  }
+}

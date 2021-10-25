@@ -1,0 +1,98 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ==================
+        Gallery  
+   ================== */
+.gallery {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .main-heading {
+    margin: auto;
+  }
+  .gallery-container {
+    display: grid;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    @include media-breakpoint-between(md, lg) {
+      width: 95%;
+      gap: 10px;
+    }
+    @include media-breakpoint-down(md) {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      width: 80%;
+      height: 1200px;
+    }
+
+    .gallery-item {
+      background-color: #ccc;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      .overlay {
+        @include overlay;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      @include media-breakpoint-down(md) {
+        grid-column: unset !important;
+        grid-row: unset !important;
+      }
+    }
+    .gallery-item:nth-of-type(1) {
+      background-image: url("../../../dist/assets/images/landing02.jpg");
+      grid-column: span 5;
+      grid-row: span 1;
+    }
+    .gallery-item:nth-of-type(2) {
+      background-image: url("../../../dist/assets/images/gallery02.jpg");
+      grid-column: span 4;
+      grid-row: span 1;
+    }
+    .gallery-item:nth-of-type(3) {
+      background-image: url("../../../dist/assets/images/gallery03.jpg");
+      grid-column: span 3;
+      grid-row: span 1;
+    }
+    .gallery-item:nth-of-type(4) {
+      background-image: url("../../../dist/assets/images/gallery04.jpg");
+      grid-column: span 3;
+      grid-row: span 1;
+    }
+    .gallery-item:nth-of-type(5) {
+      background-image: url("../../../dist/assets/images/gallery05.jpg");
+      grid-column: span 3;
+      grid-row: span 1;
+    }
+    .item-text {
+      position: relative;
+      color: var(--white-color);
+      text-align: center;
+      h3 {
+        font-weight: 700;
+      }
+      span {
+        display: block;
+        color: #e4e4e4;
+        margin-bottom: var(--mb-24);
+      }
+    }
+    .button {
+      margin: auto;
+      border-radius: 15px;
+    }
+  }
+}

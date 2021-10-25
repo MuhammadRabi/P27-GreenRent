@@ -1,0 +1,60 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ==================
+        Reviews
+   ================== */
+.reviews {
+  background-image: url("../../../dist/assets/images/reviews.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+  display: flex;
+  place-items: center;
+  .overlay {
+    @include overlay;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  article {
+    color: white;
+    position: relative;
+    max-width: 600px;
+    margin: 10px auto;
+    text-align: center;
+    figure {
+      margin: 20px auto;
+      max-width: 150px;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid var(--green-color);
+      }
+    }
+    h4 {
+      margin: var(--mb-16);
+      span {
+        color: var(--green-color);
+      }
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination {
+  color: var(--green-color);
+}

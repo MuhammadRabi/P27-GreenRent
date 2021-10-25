@@ -1,0 +1,106 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ============================================
+   ============================================ */
+
+body {
+  font-family: "Roboto", sans-serif;
+  h1 {
+    font-size: 60px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-transform: capitalize;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+a.button {
+  display: block;
+  background-color: transparent;
+  color: var(--white-color);
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: capitalize;
+  font-size: 15px;
+  text-align: center;
+  width: fit-content;
+  border: 2px solid var(--white-color);
+  transition: $secondTransition;
+
+  &:hover {
+    /*   transform: scale(1.01);*/
+    background-color: var(--green-color);
+    border: 2px solid transparent;
+  }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-bottom: 20px;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 74px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--light-color);
+}
+
+.main-heading {
+  text-align: center;
+  width: fit-content;
+  h3 {
+    color: var(--green-color);
+    font-weight: 700;
+    background-color: var(--green-lightest-color);
+    border-radius: 15px;
+    padding: 8px 10px;
+    margin-bottom: var(--mb-8);
+  }
+  h2 {
+    font-weight: 800;
+    color: var(--black-color);
+  }
+}
+
+:focus {
+  outline: none;
+}

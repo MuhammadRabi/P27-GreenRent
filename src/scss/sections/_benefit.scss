@@ -1,0 +1,81 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ==================
+        Benefits 
+   ================== */
+.benefits {
+  background-color: var(--darker-background);
+  .content {
+    width: 100%;
+    display: flex;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+    .benefits-text {
+      /*    padding: 0 20px;*/
+      padding-top: $sectionPadding;
+      padding-bottom: $sectionPadding;
+      flex-basis: 50%;
+      .text-content {
+        margin: auto;
+        max-width: 60%;
+        p {
+          margin-bottom: var(--mb-32);
+          color: var(--dark-text-color);
+          font-size: 14px;
+        }
+        .benefits-list {
+          max-width: 75%;
+          margin: auto;
+          h4 {
+            color: var(--black-background);
+            font-weight: 700;
+            padding-bottom: 5px;
+          }
+          p {
+            color: var(--dark-text-color);
+            font-size: 12px;
+            position: relative;
+            &:before {
+              content: "✔";
+              position: absolute;
+              width: 40px;
+              height: 40px;
+              left: -55px;
+              top: -10px;
+              text-align: center;
+              line-height: 335%;
+              border-radius: 50%;
+              font-weight: 700;
+              color: var(--green-color);
+              background-color: var(--green-lightest-color);
+            }
+          }
+        }
+      }
+      .benefits-btn {
+        display: flex;
+        justify-content: center;
+        .button {
+          margin-left: 10px;
+          color: var(--black-background);
+          border: 1px solid var(--black-background);
+          &:hover {
+            color: var(--white-color);
+            border: 1px solid transparent;
+          }
+        }
+      }
+    }
+    .benefits-img {
+      background-image: url("../../../dist/assets/images/benefits02.jpg");
+      background-position: center;
+      background-size: cover;
+      flex-basis: 50%;
+    }
+  }
+}

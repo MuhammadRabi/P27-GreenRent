@@ -1,0 +1,15 @@
+// import components scss files
+
+@use "components/variables";
+@use "components/breakpoints";
+@use "components/mixins";
+
+// import sections files
+@use "sections/base";
+@use "sections/header";
+@use "sections/gallery";
+@use "sections/benefit";
+@use "sections/products";
+@use "sections/contact";
+@use "sections/reviews";
+@use "sections/amenities";
