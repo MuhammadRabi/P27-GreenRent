@@ -1,2 +1,2 @@
-var swiper=new Swiper(".swiper",{autoplay:{delay:5e3},pagination:{el:".swiper-pagination",dynamicBullets:!0,loop:!0}});
+var swiper=new Swiper(".swiper",{autoplay:{delay:5e3},pagination:{el:".swiper-pagination",dynamicBullets:!0,loop:!0}});const navBar=document.querySelector("nav"),navToggle=document.querySelector(".menu-toggle");navToggle.addEventListener("click",(()=>{navBar.classList.toggle("active"),navToggle.classList.toggle("active")}));
 //# sourceMappingURL=all.js.map

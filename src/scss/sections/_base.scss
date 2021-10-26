@@ -7,21 +7,22 @@
 /* ============================================
    ============================================ */
 
+html {
+  scroll-behavior: smooth;
+}
+
+:focus {
+  outline: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  h1 {
-    font-size: 60px;
-  }
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 ul {
@@ -57,7 +58,6 @@ a.button {
   transition: $secondTransition;
 
   &:hover {
-    /*   transform: scale(1.01);*/
     background-color: var(--green-color);
     border: 2px solid transparent;
   }
@@ -70,23 +70,39 @@ h5,
 h6 {
   padding-bottom: 20px;
   text-transform: capitalize;
-  font-weight: 400;
+  font-weight: 700;
+}
+
+q {
+  line-height: 1.4;
 }
 
 h1 {
   margin-bottom: 10px;
-  font-size: 74px;
+  font-size: 60px;
+  @include media-breakpoint-between(md, lg) {
+    font-size: 48px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 32px;
+  }
 }
 
 p {
   font-size: 14px;
   line-height: 1.6;
   color: var(--light-color);
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+  }
 }
 
 .main-heading {
   text-align: center;
   width: fit-content;
+  @include media-breakpoint-down(md) {
+    margin: 5px auto;
+  }
   h3 {
     color: var(--green-color);
     font-weight: 700;
@@ -99,8 +115,4 @@ p {
     font-weight: 800;
     color: var(--black-color);
   }
-}
-
-:focus {
-  outline: none;
 }

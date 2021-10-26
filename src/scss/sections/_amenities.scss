@@ -26,6 +26,9 @@
     display: flex;
     background-color: #fff;
     border-radius: 10px;
+    @include media-breakpoint-down(sm) {
+      width: 90%;
+    }
     @include media-breakpoint-down(lg) {
       flex-direction: column;
     }
@@ -34,6 +37,9 @@
       h3 {
         padding: 20px 35px;
         border-radius: 0 0 15px 15px;
+        @include media-breakpoint-only(xs) {
+          padding: 15px;
+        }
       }
     }
     .amenities-text {
@@ -49,15 +55,18 @@
       }
       .lists {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         margin-bottom: var(--mb-16);
         li {
-          margin: 25px 30px;
+          margin: 25px; /* */
           position: relative;
           text-align: center;
           font-size: 14px;
           text-transform: capitalize;
+          @include media-breakpoint-only(xs) {
+            margin: 25px 10px;
+          }
           &:before {
             content: "";
             position: absolute;
@@ -76,8 +85,10 @@
       .description {
         padding: 25px 45px;
         background-color: var(--black-background);
+        @include media-breakpoint-only(xs) {
+          padding: 25px;
+        }
         h5 {
-          font-weight: 600;
           color: var(--green-color);
         }
       }
@@ -88,6 +99,9 @@
         color: var(--white-color);
         background-color: var(--green-color);
         border-radius: 0 0 10px 0;
+        @include media-breakpoint-down(lg) {
+          border-radius: 0 0 10px 10px;
+        }
 
         &:hover {
           color: var(--green-color);

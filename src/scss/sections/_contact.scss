@@ -31,6 +31,9 @@
       margin: auto;
       padding: 25px;
     }
+    @include media-breakpoint-only(md) {
+      padding: 50px;
+    }
     header {
       margin-bottom: var(--mb-24);
     }
@@ -57,6 +60,9 @@
     padding: 0 35px 35px;
     display: flex;
     flex-direction: column;
+    @include media-breakpoint-only(xs) {
+      max-width: 275px;
+    }
     .main-heading {
       margin: 0 auto;
       h3 {

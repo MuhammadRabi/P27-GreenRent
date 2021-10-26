@@ -25,6 +25,17 @@
     @include overlay;
     background-color: rgba(0, 0, 0, 0.7);
   }
+
+  // swiper slider
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-pagination {
+    color: var(--green-color);
+  }
+
   article {
     color: white;
     position: relative;
@@ -48,13 +59,4 @@
       }
     }
   }
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-pagination {
-  color: var(--green-color);
 }

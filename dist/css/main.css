@@ -45,21 +45,22 @@
 
 /* ============================================
    ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+:focus {
+  outline: none;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-}
-body h1 {
-  font-size: 60px;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 ul {
@@ -97,7 +98,6 @@ a.button {
   transition: 0.2s ease-in-out;
 }
 a.button:hover {
-  /*   transform: scale(1.01);*/
   background-color: var(--green-color);
   border: 2px solid transparent;
 }
@@ -109,12 +109,26 @@ h5,
 h6 {
   padding-bottom: 20px;
   text-transform: capitalize;
-  font-weight: 400;
+  font-weight: 700;
+}
+
+q {
+  line-height: 1.4;
 }
 
 h1 {
   margin-bottom: 10px;
-  font-size: 74px;
+  font-size: 60px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 32px;
+  }
 }
 
 p {
@@ -122,12 +136,22 @@ p {
   line-height: 1.6;
   color: var(--light-color);
 }
+@media (max-width: 767.98px) {
+  p {
+    font-size: 12px;
+  }
+}
 
 .main-heading {
   text-align: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media (max-width: 767.98px) {
+  .main-heading {
+    margin: 5px auto;
+  }
 }
 .main-heading h3 {
   color: var(--green-color);
@@ -142,10 +166,6 @@ p {
   color: var(--black-color);
 }
 
-:focus {
-  outline: none;
-}
-
 /* ==================
      start top 
    ================== */
@@ -155,6 +175,11 @@ p {
   background-color: #222;
   text-align: center;
   padding: 15px 0;
+}
+@media (max-width: 991.98px) {
+  .top {
+    display: none;
+  }
 }
 .top .test,
 .top .email {
@@ -192,7 +217,6 @@ p {
 header {
   position: relative;
   background-color: var(--white-color);
-  display: block;
   z-index: 2;
 }
 header .container {
@@ -211,6 +235,12 @@ header .container .logo {
   font-size: 32px;
   text-align: left;
 }
+@media (max-width: 991.98px) {
+  header .container .logo {
+    font-size: 28px;
+    padding: 15px;
+  }
+}
 header .container .logo span {
   color: var(--green-color);
 }
@@ -221,17 +251,18 @@ header .container nav {
 }
 @media (max-width: 991.98px) {
   header .container nav {
-    display: none;
-  }
-  header .container nav.active {
+    transition: 1s ease-in-out;
+    position: absolute;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
     top: 0;
-    left: 0;
+    right: -100%;
     width: 100%;
-    height: 100vh;
-    position: absolute;
+  }
+  header .container nav.active {
+    right: 0;
   }
 }
 header .container nav .nav__list {
@@ -250,8 +281,6 @@ header .container nav .nav__list {
   }
 }
 header .container nav .nav__list .nav__item .nav__link {
-  display: inline-block;
-  text-transform: capitalize;
   transition: 0.2s ease-in-out;
   margin: 25px 15px;
   color: var(--dark-text-color);
@@ -262,7 +291,8 @@ header .container nav .nav__list .nav__item .nav__link.active, header .container
 }
 @media (max-width: 991.98px) {
   header .container nav .nav__list .nav__item .nav__link {
-    padding-top: 25px;
+    padding-top: 15px;
+    margin: 15px;
     font-size: 20px;
   }
 }
@@ -273,6 +303,11 @@ header .container .login {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 991.98px) {
+  header .container .login {
+    display: none;
+  }
+}
 header .container .login a.button {
   color: var(--dark-text-color);
   border: 1px solid var(--dark-text-color);
@@ -280,6 +315,35 @@ header .container .login a.button {
 header .container .login a.button:hover {
   color: var(--white-color);
   border: 1px solid transparent;
+}
+
+/* ================
+     menu-toggle 
+   ================ */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: relative;
+}
+@media (max-width: 991.98px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+.menu-toggle i {
+  font-size: 28px;
+}
+.menu-toggle i:nth-of-type(1) {
+  display: block;
+}
+.menu-toggle.active i:nth-of-type(1) {
+  display: none;
+}
+.menu-toggle i:nth-of-type(2) {
+  display: none;
+}
+.menu-toggle.active i:nth-of-type(2) {
+  display: block;
 }
 
 /* =====================
@@ -295,6 +359,11 @@ header .container .login a.button:hover {
   align-items: center;
   position: relative;
 }
+@media (max-width: 991.98px) {
+  .hero-area {
+    height: 95vh;
+  }
+}
 .hero-area .overlay {
   position: absolute;
   top: 0;
@@ -309,16 +378,20 @@ header .container .login a.button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   text-transform: capitalize;
 }
 .hero-area .hero-text h3 {
   color: var(--green-lighter-color);
   font-size: 32px;
-  font-weight: 700;
+}
+@media (max-width: 767.98px) {
+  .hero-area .hero-text h3 {
+    font-size: 28px;
+  }
 }
 .hero-area .hero-text h1,
 .hero-area .hero-text h2 {
-  font-weight: 700;
   color: var(--white-color);
 }
 .hero-area .hero-text h1 {
@@ -446,9 +519,6 @@ header .container .login a.button:hover {
   color: var(--white-color);
   text-align: center;
 }
-.gallery .gallery-container .item-text h3 {
-  font-weight: 700;
-}
 .gallery .gallery-container .item-text span {
   display: block;
   color: #e4e4e4;
@@ -475,7 +545,6 @@ header .container .login a.button:hover {
   }
 }
 .benefits .content .benefits-text {
-  /*    padding: 0 20px;*/
   padding-top: 100px;
   padding-bottom: 100px;
   flex-basis: 50%;
@@ -483,6 +552,11 @@ header .container .login a.button:hover {
 .benefits .content .benefits-text .text-content {
   margin: auto;
   max-width: 60%;
+}
+@media (max-width: 767.98px) {
+  .benefits .content .benefits-text .text-content {
+    max-width: 75%;
+  }
 }
 .benefits .content .benefits-text .text-content p {
   margin-bottom: var(--mb-32);
@@ -495,7 +569,6 @@ header .container .login a.button:hover {
 }
 .benefits .content .benefits-text .text-content .benefits-list h4 {
   color: var(--black-background);
-  font-weight: 700;
   padding-bottom: 5px;
 }
 .benefits .content .benefits-text .text-content .benefits-list p {
@@ -517,16 +590,28 @@ header .container .login a.button:hover {
   color: var(--green-color);
   background-color: var(--green-lightest-color);
 }
-.benefits .content .benefits-text .benefits-btn {
+.benefits .content .benefits-text .benefits-btns {
   display: flex;
   justify-content: center;
+  margin: auto;
 }
-.benefits .content .benefits-text .benefits-btn .button {
-  margin-left: 10px;
+@media (max-width: 575.98px) {
+  .benefits .content .benefits-text .benefits-btns {
+    flex-direction: column;
+    width: 50%;
+  }
+}
+.benefits .content .benefits-text .benefits-btns .button {
+  margin: 5px 0 5px 10px;
   color: var(--black-background);
   border: 1px solid var(--black-background);
 }
-.benefits .content .benefits-text .benefits-btn .button:hover {
+@media (max-width: 575.98px) {
+  .benefits .content .benefits-text .benefits-btns .button {
+    margin: 10px auto;
+  }
+}
+.benefits .content .benefits-text .benefits-btns .button:hover {
   color: var(--white-color);
   border: 1px solid transparent;
 }
@@ -553,6 +638,12 @@ header .container .login a.button:hover {
   margin: 25px auto;
   display: flex;
   justify-content: space-around;
+}
+@media (max-width: 767.98px) {
+  .products .product-control {
+    flex-direction: column;
+    place-items: center;
+  }
 }
 .products .product-control li {
   text-transform: capitalize;
@@ -718,6 +809,11 @@ header .container .login a.button:hover {
     padding: 25px;
   }
 }
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .contact article {
+    padding: 50px;
+  }
+}
 .contact article header {
   margin-bottom: var(--mb-24);
 }
@@ -743,6 +839,11 @@ header .container .login a.button:hover {
   padding: 0 35px 35px;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 575.98px) {
+  .contact form {
+    max-width: 275px;
+  }
 }
 .contact form .main-heading {
   margin: 0 auto;
@@ -826,6 +927,13 @@ header .container .login a.button:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
 }
+.reviews .swiper {
+  width: 100%;
+  height: 100%;
+}
+.reviews .swiper-pagination {
+  color: var(--green-color);
+}
 .reviews article {
   color: white;
   position: relative;
@@ -850,15 +958,6 @@ header .container .login a.button:hover {
   color: var(--green-color);
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-pagination {
-  color: var(--green-color);
-}
-
 /* ==================
         Amenities 
    ================== */
@@ -877,6 +976,11 @@ header .container .login a.button:hover {
   background-color: #fff;
   border-radius: 10px;
 }
+@media (max-width: 575.98px) {
+  .amenities .content {
+    width: 90%;
+  }
+}
 @media (max-width: 991.98px) {
   .amenities .content {
     flex-direction: column;
@@ -888,6 +992,11 @@ header .container .login a.button:hover {
 .amenities .content .main-heading h3 {
   padding: 20px 35px;
   border-radius: 0 0 15px 15px;
+}
+@media (max-width: 575.98px) {
+  .amenities .content .main-heading h3 {
+    padding: 15px;
+  }
 }
 .amenities .content .amenities-text {
   overflow: hidden;
@@ -903,16 +1012,22 @@ header .container .login a.button:hover {
 }
 .amenities .content .amenities-text .lists {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: var(--mb-16);
 }
 .amenities .content .amenities-text .lists li {
-  margin: 25px 30px;
+  margin: 25px;
+  /* */
   position: relative;
   text-align: center;
   font-size: 14px;
   text-transform: capitalize;
+}
+@media (max-width: 575.98px) {
+  .amenities .content .amenities-text .lists li {
+    margin: 25px 10px;
+  }
 }
 .amenities .content .amenities-text .lists li:before {
   content: "";
@@ -931,8 +1046,12 @@ header .container .login a.button:hover {
   padding: 25px 45px;
   background-color: var(--black-background);
 }
+@media (max-width: 575.98px) {
+  .amenities .content .amenities-text .description {
+    padding: 25px;
+  }
+}
 .amenities .content .amenities-text .description h5 {
-  font-weight: 600;
   color: var(--green-color);
 }
 .amenities .content .amenities-text .btn {
@@ -942,6 +1061,11 @@ header .container .login a.button:hover {
   color: var(--white-color);
   background-color: var(--green-color);
   border-radius: 0 0 10px 0;
+}
+@media (max-width: 991.98px) {
+  .amenities .content .amenities-text .btn {
+    border-radius: 0 0 10px 10px;
+  }
 }
 .amenities .content .amenities-text .btn:hover {
   color: var(--green-color);

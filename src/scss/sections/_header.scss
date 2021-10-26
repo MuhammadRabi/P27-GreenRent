@@ -14,6 +14,9 @@
   background-color: #222;
   text-align: center;
   padding: 15px 0;
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
 
   .test,
   .email {
@@ -52,7 +55,6 @@
 header {
   position: relative;
   background-color: var(--white-color);
-  display: block;
   z-index: 2;
   .container {
     display: flex;
@@ -66,6 +68,10 @@ header {
       font-weight: 700;
       font-size: 32px;
       text-align: left;
+      @include media-breakpoint-down(lg) {
+        font-size: 28px;
+        padding: 15px;
+      }
       span {
         color: var(--green-color);
       }
@@ -74,18 +80,19 @@ header {
       width: 40%;
       display: flex;
       justify-content: center;
-
       @include media-breakpoint-down(lg) {
-        display: none;
+        transition: 1s ease-in-out;
+        position: absolute;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white-color);
+        top: 0;
+        right: -100%;
+        width: 100%;
+
         &.active {
-          display: flex;
-          flex-direction: column;
-          background-color: var(--white-color);
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100vh;
-          position: absolute;
+          right: 0;
         }
       }
       .nav__list {
@@ -102,8 +109,6 @@ header {
         }
         .nav__item {
           .nav__link {
-            display: inline-block;
-            text-transform: capitalize;
             transition: $secondTransition;
             margin: 25px 15px;
             color: var(--dark-text-color);
@@ -113,7 +118,8 @@ header {
               color: var(--black-color);
             }
             @include media-breakpoint-down(lg) {
-              padding-top: 25px;
+              padding-top: 15px;
+              margin: 15px;
               font-size: 20px;
             }
           }
@@ -126,6 +132,9 @@ header {
       text-align: right;
       justify-content: center;
       align-items: center;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
       a.button {
         color: var(--dark-text-color);
         border: 1px solid var(--dark-text-color);
@@ -137,70 +146,29 @@ header {
     }
   }
 }
-
-/* =====================
-     start hero area
-   ===================== */
-
-.hero-area {
-  height: 85vh;
-  background-image: url(../../../dist/assets/images/landing02.jpg);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ================
+     menu-toggle 
+   ================ */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
   position: relative;
-  .overlay {
-    @include overlay;
-    background-color: rgba(0, 0, 0, 0.4);
+  @include media-breakpoint-down(lg) {
+    display: block;
   }
-  .hero-text {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    h3 {
-      color: var(--green-lighter-color);
-      font-size: 32px;
-      font-weight: 700;
-    }
-    h1,
-    h2 {
-      font-weight: 700;
-      color: var(--white-color);
-    }
-    h1 {
-      margin-top: 2px;
-    }
-    p {
-      color: #e4e4e4;
-      margin: var(--mb-16) 0;
-    }
+  i {
+    font-size: 28px;
   }
-  .hero-btns {
-    display: flex;
-    align-items: center;
-    margin-top: var(--mb-16);
-    @include media-breakpoint-between(md, xl) {
-      justify-content: flex-start;
-    }
-    @include media-breakpoint-down(md) {
-      flex-direction: column;
-    }
-
-    .button {
-      @include media-breakpoint-down(md) {
-        margin-bottom: var(--mb-24);
-      }
-    }
-    a:last-of-type {
-      margin-left: var(--mb-16);
-      @include media-breakpoint-down(md) {
-        margin-left: 0;
-      }
-    }
+  i:nth-of-type(1) {
+    display: block;
+  }
+  &.active i:nth-of-type(1) {
+    display: none;
+  }
+  i:nth-of-type(2) {
+    display: none;
+  }
+  &.active i:nth-of-type(2) {
+    display: block;
   }
 }

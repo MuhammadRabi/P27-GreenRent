@@ -8,3 +8,13 @@ var swiper = new Swiper(".swiper", {
     loop: true,
   },
 });
+
+//mobile nav
+
+const navBar = document.querySelector("nav");
+const navToggle = document.querySelector(".menu-toggle");
+
+navToggle.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+  navToggle.classList.toggle("active");
+});

@@ -16,13 +16,15 @@
       flex-direction: column;
     }
     .benefits-text {
-      /*    padding: 0 20px;*/
       padding-top: $sectionPadding;
       padding-bottom: $sectionPadding;
       flex-basis: 50%;
       .text-content {
         margin: auto;
         max-width: 60%;
+        @include media-breakpoint-down(md) {
+          max-width: 75%;
+        }
         p {
           margin-bottom: var(--mb-32);
           color: var(--dark-text-color);
@@ -33,7 +35,6 @@
           margin: auto;
           h4 {
             color: var(--black-background);
-            font-weight: 700;
             padding-bottom: 5px;
           }
           p {
@@ -57,11 +58,20 @@
           }
         }
       }
-      .benefits-btn {
+      .benefits-btns {
         display: flex;
         justify-content: center;
+        margin: auto;
+        @include media-breakpoint-only(xs) {
+          flex-direction: column;
+          width: 50%;
+        }
         .button {
-          margin-left: 10px;
+          margin: 5px 0 5px 10px;
+          @include media-breakpoint-only(xs) {
+            margin: 10px auto;
+          }
+
           color: var(--black-background);
           border: 1px solid var(--black-background);
           &:hover {

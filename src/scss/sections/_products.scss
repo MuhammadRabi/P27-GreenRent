@@ -25,6 +25,10 @@
     margin: 25px auto;
     display: flex;
     justify-content: space-around;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      place-items: center;
+    }
     li {
       text-transform: capitalize;
       cursor: pointer;
