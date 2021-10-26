@@ -81,18 +81,19 @@ header {
       display: flex;
       justify-content: center;
       @include media-breakpoint-down(lg) {
-        transition: 1s ease-in-out;
         position: absolute;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         background-color: var(--white-color);
         top: 0;
-        right: -100%;
-        width: 100%;
+        right: 0;
+        height: 100vh;
+        width: 0;
+        transition: 1s ease-in-out;
+        overflow: hidden;
 
         &.active {
-          right: 0;
+          width: 100%;
         }
       }
       .nav__list {

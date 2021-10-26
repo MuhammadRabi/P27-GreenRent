@@ -55,6 +55,7 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 * {
@@ -251,18 +252,19 @@ header .container nav {
 }
 @media (max-width: 991.98px) {
   header .container nav {
-    transition: 1s ease-in-out;
     position: absolute;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
     top: 0;
-    right: -100%;
-    width: 100%;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    transition: 1s ease-in-out;
+    overflow: hidden;
   }
   header .container nav.active {
-    right: 0;
+    width: 100%;
   }
 }
 header .container nav .nav__list {
@@ -563,6 +565,11 @@ header .container .login a.button:hover {
   color: var(--dark-text-color);
   font-size: 14px;
 }
+@media (max-width: 767.98px) {
+  .benefits .content .benefits-text .text-content p {
+    text-align: center;
+  }
+}
 .benefits .content .benefits-text .text-content .benefits-list {
   max-width: 75%;
   margin: auto;
@@ -574,6 +581,7 @@ header .container .login a.button:hover {
 .benefits .content .benefits-text .text-content .benefits-list p {
   color: var(--dark-text-color);
   font-size: 12px;
+  text-align: left;
   position: relative;
 }
 .benefits .content .benefits-text .text-content .benefits-list p:before {
@@ -597,8 +605,7 @@ header .container .login a.button:hover {
 }
 @media (max-width: 575.98px) {
   .benefits .content .benefits-text .benefits-btns {
-    flex-direction: column;
-    width: 50%;
+    width: 75%;
   }
 }
 .benefits .content .benefits-text .benefits-btns .button {
@@ -807,6 +814,7 @@ header .container .login a.button:hover {
     width: 90%;
     margin: auto;
     padding: 25px;
+    text-align: center;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -825,6 +833,11 @@ header .container .login a.button:hover {
   color: var(--green-color);
   background-color: transparent;
   border: 2px solid var(--green-color);
+}
+@media (max-width: 767.98px) {
+  .contact article .button {
+    margin: auto;
+  }
 }
 .contact article .button:hover {
   color: var(--white-color);
@@ -911,7 +924,7 @@ header .container .login a.button:hover {
         Reviews
    ================== */
 .reviews {
-  background-image: url("../../../dist/assets/images/reviews.jpg");
+  background-image: url(".././../dist/assets/images/reviews.jpg");
   background-attachment: fixed;
   background-size: cover;
   height: 500px;

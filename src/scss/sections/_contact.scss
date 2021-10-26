@@ -30,6 +30,7 @@
       width: 90%;
       margin: auto;
       padding: 25px;
+      text-align: center;
     }
     @include media-breakpoint-only(md) {
       padding: 50px;
@@ -45,6 +46,9 @@
       color: var(--green-color);
       background-color: transparent;
       border: 2px solid var(--green-color);
+      @include media-breakpoint-down(md) {
+        margin: auto;
+      }
       &:hover {
         color: var(--white-color);
         background-color: var(--green-color);
