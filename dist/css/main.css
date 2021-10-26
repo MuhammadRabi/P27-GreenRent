@@ -351,7 +351,7 @@ header .container .login a.button:hover {
    ===================== */
 .hero-area {
   height: 85vh;
-  background-image: url(../../../dist/assets/images/landing02.jpg);
+  background-image: url(.././../dist/assets/images/landing02.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -490,27 +490,27 @@ header .container .login a.button:hover {
   }
 }
 .gallery .gallery-container .gallery-item:nth-of-type(1) {
-  background-image: url("../../../dist/assets/images/landing02.jpg");
+  background-image: url(".././../dist/assets/images/landing02.jpg");
   grid-column: span 5;
   grid-row: span 1;
 }
 .gallery .gallery-container .gallery-item:nth-of-type(2) {
-  background-image: url("../../../dist/assets/images/gallery02.jpg");
+  background-image: url(".././../dist/assets/images/gallery02.jpg");
   grid-column: span 4;
   grid-row: span 1;
 }
 .gallery .gallery-container .gallery-item:nth-of-type(3) {
-  background-image: url("../../../dist/assets/images/gallery03.jpg");
+  background-image: url(".././../dist/assets/images/gallery03.jpg");
   grid-column: span 3;
   grid-row: span 1;
 }
 .gallery .gallery-container .gallery-item:nth-of-type(4) {
-  background-image: url("../../../dist/assets/images/gallery04.jpg");
+  background-image: url(".././../dist/assets/images/gallery04.jpg");
   grid-column: span 3;
   grid-row: span 1;
 }
 .gallery .gallery-container .gallery-item:nth-of-type(5) {
-  background-image: url("../../../dist/assets/images/gallery05.jpg");
+  background-image: url(".././../dist/assets/images/gallery05.jpg");
   grid-column: span 3;
   grid-row: span 1;
 }
@@ -616,7 +616,7 @@ header .container .login a.button:hover {
   border: 1px solid transparent;
 }
 .benefits .content .benefits-img {
-  background-image: url("../../../dist/assets/images/benefits02.jpg");
+  background-image: url(".././../dist/assets/images/benefits02.jpg");
   background-position: center;
   background-size: cover;
   flex-basis: 50%;
@@ -725,37 +725,37 @@ header .container .login a.button:hover {
   bottom: 0;
 }
 .products .products-item:nth-of-type(1) {
-  background-image: url("../../../dist/assets/images/product01.jpg");
+  background-image: url(".././../dist/assets/images/product01.jpg");
   grid-column: span 2;
   grid-row: span 2;
 }
 .products .products-item:nth-of-type(2) {
-  background-image: url("../../../dist/assets/images/product07.jpg");
+  background-image: url(".././../dist/assets/images/product07.jpg");
   grid-column: span 1;
   grid-row: span 1;
 }
 .products .products-item:nth-of-type(3) {
-  background-image: url("../../../dist/assets/images/product03.jpg");
+  background-image: url(".././../dist/assets/images/product03.jpg");
   grid-column: span 1;
   grid-row: span 2;
 }
 .products .products-item:nth-of-type(4) {
-  background-image: url("../../../dist/assets/images/product05.jpg");
+  background-image: url(".././../dist/assets/images/product05.jpg");
   grid-column: span 1;
   grid-row: span 1;
 }
 .products .products-item:nth-of-type(5) {
-  background-image: url("../../../dist/assets/images/product06.jpg");
+  background-image: url(".././../dist/assets/images/product06.jpg");
   grid-column: span 1;
   grid-row: span 1;
 }
 .products .products-item:nth-of-type(6) {
-  background-image: url("../../../dist/assets/images/product04.jpg");
+  background-image: url(".././../dist/assets/images/product04.jpg");
   grid-column: span 2;
   grid-row: span 1;
 }
 .products .products-item:nth-of-type(7) {
-  background-image: url("../../../dist/assets/images/product02.jpg");
+  background-image: url(".././../dist/assets/images/product02.jpg");
   grid-column: span 1;
   grid-row: span 1;
 }
@@ -1072,7 +1072,7 @@ header .container .login a.button:hover {
   background-color: var(--white-color);
 }
 .amenities .content .amenities-img {
-  background-image: url("../../../dist/assets/images/benefits01.jpg");
+  background-image: url(".././../dist/assets/images/benefits01.jpg");
   background-position: center;
   background-size: cover;
   flex-basis: 50%;
