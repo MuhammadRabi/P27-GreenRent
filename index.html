@@ -23,7 +23,7 @@
 
 <body>
     <!-- start header -->
-    <section class="top">
+    <!--<section class="top">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -48,9 +48,9 @@
             </div>
         </div>
     </section>
+-->
     <header>
         <div class="container">
-
             <a href="#" class="logo">Rent<span>Space</span>
             </a>
             <nav>
@@ -62,14 +62,14 @@
                     <li class="nav__item"><a href="#" class="nav__link" data-nav=".team">about</a></li>
                     <li class="nav__item"><a href="#" class="nav__link" data-nav=".subscribe">contact</a></li>
                 </ul>
+                <!-- menu toggle Button -->
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div>
             </nav>
             <div class="login">
                 <a href="#" class="button">Book Now</a>
-            </div>
-            <!-- menu toggle Button -->
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
             </div>
         </div>
     </header>
@@ -92,6 +92,38 @@
         </div>
     </section>
     <!-- End hero area -->
+    <section class="choose">
+        <div class="container">
+            <main>
+                <div class="row">
+                    <div class="col-3"><select placeholder="choose area" name="" id="choose">
+                            <option value="hide">choose area</option>
+                            <option value="1">option1</option>
+                            <option value="2">option2</option>
+                            <option value="3">option3</option>
+                        </select></div>
+                    <div class="col-3"><select placeholder="choose area" name="" id="choose">
+                            <option value="hide">peoperty status</option>
+                            <option value="1">option1</option>
+                            <option value="2">option2</option>
+                            <option value="2">option3</option>
+                        </select></div>
+                    <div class="col-3"><select placeholder="choose area" name="" id="choose">
+                            <option value="hide">peoperty type</option>
+                            <option value="1">option1</option>
+                            <option value="2">option2</option>
+                            <option value="3">option3</option>
+                        </select></div>
+                    <div class="col-3">
+                        <div class="submit-btn">
+                            <input type="submit" class="button" value="book now">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
     <!-- start Gallery -->
     <section class="gallery">
         <div class="container">
@@ -372,6 +404,8 @@
             </div>
         </div>
     </section>
+    <!-- scroll to top button -->
+    <div class="scroll-to-top"></div>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
     <script src="dist/all.js"></script>

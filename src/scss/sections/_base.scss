@@ -17,7 +17,6 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
 }
 
 * {
@@ -44,7 +43,8 @@ a {
   height: auto;
 }
 
-a.button {
+a.button,
+.button {
   display: block;
   background-color: transparent;
   color: var(--white-color);
@@ -115,5 +115,26 @@ p {
   h2 {
     font-weight: 800;
     color: var(--black-color);
+  }
+}
+
+/* =========================
+      scroll to top btn 
+   ========================= */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  border: 10px double var(--green-color);
+  transition: $secondTransition;
+  display: none;
+  &.active {
+    display: block;
   }
 }

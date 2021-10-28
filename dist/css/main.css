@@ -55,7 +55,6 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
 }
 
 * {
@@ -82,7 +81,8 @@ a {
   height: auto;
 }
 
-a.button {
+a.button,
+.button {
   display: block;
   background-color: transparent;
   color: var(--white-color);
@@ -98,7 +98,8 @@ a.button {
   border: 2px solid var(--white-color);
   transition: 0.2s ease-in-out;
 }
-a.button:hover {
+a.button:hover,
+.button:hover {
   background-color: var(--green-color);
   border: 2px solid transparent;
 }
@@ -167,58 +168,85 @@ p {
   color: var(--black-color);
 }
 
+/* =========================
+      scroll to top btn 
+   ========================= */
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  border: 10px double var(--green-color);
+  transition: 0.2s ease-in-out;
+  display: none;
+}
+.scroll-to-top.active {
+  display: block;
+}
+
 /* ==================
      start top 
    ================== */
-.top {
+/*.top {
   font-size: 12px;
   color: var(--white-color);
   background-color: #222;
   text-align: center;
   padding: 15px 0;
-}
-@media (max-width: 991.98px) {
-  .top {
+  @include media-breakpoint-down(lg) {
     display: none;
   }
-}
-.top .test,
-.top .email {
-  display: flex;
-  justify-content: flex-start;
-}
-.top i {
-  font-size: 14px;
-}
-.top .email,
-.top address {
-  margin-left: 50px;
-}
-.top .email i,
-.top address i {
-  color: var(--green-color);
-  margin-right: 10px;
-}
-.top .socials {
-  text-align: right;
-  margin-right: var(--mb-32);
-}
-.top .socials i {
-  cursor: pointer;
-  margin-left: 10px;
-  color: var(--darker-text-color);
-}
-.top .socials i:hover {
-  color: var(--green-color);
-}
 
+  .test,
+  .email {
+    display: flex;
+    justify-content: flex-start;
+  }
+  i {
+    font-size: 14px;
+  }
+  .email,
+  address {
+    margin-left: 50px;
+    i {
+      color: var(--green-color);
+      margin-right: 10px;
+    }
+  }
+  .socials {
+    text-align: right;
+    margin-right: var(--mb-32);
+    i {
+      cursor: pointer;
+      margin-left: 10px;
+      color: var(--darker-text-color);
+      &:hover {
+        color: var(--green-color);
+      }
+    }
+  }
+}
+*/
 /* ==================
      start header
    ================== */
 header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   background-color: var(--white-color);
+  box-shadow: 1px 15px 20px -14px #c9c7c7;
   z-index: 2;
+}
+@media (max-width: 991.98px) {
+  header {
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 header .container {
   display: flex;
@@ -249,22 +277,22 @@ header .container nav {
   width: 40%;
   display: flex;
   justify-content: center;
+  transition: 0.5s ease-in-out;
 }
 @media (max-width: 991.98px) {
   header .container nav {
-    position: absolute;
-    display: flex;
+    position: fixed;
     flex-direction: column;
     background-color: var(--white-color);
-    top: 0;
+    top: -100%;
     right: 0;
     height: 100vh;
-    width: 0;
-    transition: 1s ease-in-out;
+    width: 100%;
     overflow: hidden;
   }
   header .container nav.active {
-    width: 100%;
+    /*  right: 0;*/
+    top: 0;
   }
 }
 header .container nav .nav__list {
@@ -283,6 +311,7 @@ header .container nav .nav__list {
   }
 }
 header .container nav .nav__list .nav__item .nav__link {
+  display: inline-flex;
   transition: 0.2s ease-in-out;
   margin: 25px 15px;
   color: var(--dark-text-color);
@@ -325,7 +354,9 @@ header .container .login a.button:hover {
 .menu-toggle {
   display: none;
   cursor: pointer;
-  position: relative;
+  position: fixed;
+  top: 20px;
+  right: 25px;
 }
 @media (max-width: 991.98px) {
   .menu-toggle {
@@ -352,7 +383,7 @@ header .container .login a.button:hover {
      start hero area
    ===================== */
 .hero-area {
-  height: 85vh;
+  height: 100guvh;
   background-image: url(.././../dist/assets/images/landing02.jpg);
   background-size: cover;
   background-position: center;
@@ -430,6 +461,66 @@ header .container .login a.button:hover {
   .hero-area .hero-btns a:last-of-type {
     margin-left: 0;
   }
+}
+
+.choose main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  height: 125px;
+  border-radius: 8px;
+  box-shadow: 1px 19px 17px 1px #ccc;
+  position: absolute;
+  bottom: -60px;
+  margin: 5px auto;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 70%;
+}
+@media (max-width: 991.98px) {
+  .choose main {
+    display: none;
+  }
+}
+.choose main .submit-btn {
+  position: relative;
+}
+.choose main .submit-btn:hover .button {
+  color: var(--white-color);
+  background-color: var(--green-color);
+  border: 2px solid transparent;
+}
+.choose main .submit-btn:hover i {
+  color: var(--white-color);
+}
+.choose main .submit-btn .button {
+  color: var(--green-color);
+  background-color: transparent;
+  border: 2px solid var(--green-color);
+  text-align: center;
+  padding: 10px 25px 10px 20px;
+  text-align: left;
+}
+.choose main .submit-btn i {
+  display: block;
+  position: absolute;
+  top: 13px;
+  right: 52px;
+  font-size: 13px;
+  color: var(--green-color);
+}
+.choose select {
+  width: 175px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border-color: #ccc;
+  text-transform: capitalize;
+  font-size: 14px;
+  cursor: pointer;
+}
+.choose select option {
+  padding: 5px;
 }
 
 /* ==================
@@ -528,7 +619,6 @@ header .container .login a.button:hover {
 }
 .gallery .gallery-container .button {
   margin: auto;
-  border-radius: 15px;
 }
 
 /* ==================
