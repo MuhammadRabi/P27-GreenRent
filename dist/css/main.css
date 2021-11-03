@@ -749,13 +749,13 @@ header .container .login a.button:hover {
   border-radius: 15px;
   transition: 0.5s ease-in-out;
 }
-.products .product-control li:hover {
+.products .product-control li:hover, .products .product-control li.active {
   color: var(--white-color);
   background-color: var(--green-color);
 }
 .products .products-container {
   display: grid;
-  height: 100vh;
+  height: 75vh;
   width: 80%;
   margin: auto;
   grid-template-columns: repeat(4, 1fr);
@@ -787,6 +787,7 @@ header .container .login a.button:hover {
   overflow: hidden;
   text-align: center;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 @media (max-width: 767.98px) {
   .products .products-item {
@@ -803,17 +804,6 @@ header .container .login a.button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.5s ease-in-out;
   width: 0;
-  /* &:before {
-        content: "+";
-        color: white;
-        font-size: 64px;
-        display: flex;
-      place-items: center;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%);
-      position: absolute;
-  }*/
 }
 .products .products-item:hover .overlay {
   width: 100%;
