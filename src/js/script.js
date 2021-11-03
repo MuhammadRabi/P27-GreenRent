@@ -45,6 +45,9 @@ function scrollToSection(navLinks) {
         top: sectionToGo,
         behaviour: "smooth",
       });
+      // closing the menuToggle at mobile
+      navBar.classList.remove("active");
+      navToggle.classList.remove("active");
     });
   });
 }
