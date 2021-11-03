@@ -27,7 +27,29 @@ document.addEventListener("keyup", (e) => {
   }
 });
 
-// trial
+// navigation
+
+let navListItems = document.querySelectorAll(".nav__list a");
+
+function scrollToSection(navLinks) {
+  navLinks.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      // remove any active class on navLink on click
+      navLinks.forEach((item) => item.classList.remove("active"));
+      // add active class when clicking a nav link
+      e.currentTarget.classList.add("active");
+      // smooth scroll to desired section automatically
+      let sectionToGo = document.querySelector(e.target.dataset.nav).offsetTop;
+      window.scrollTo({
+        top: sectionToGo,
+        behaviour: "smooth",
+      });
+    });
+  });
+}
+
+scrollToSection(navListItems);
 
 // scroll to top btn
 
@@ -38,14 +60,8 @@ window.addEventListener("scroll", () => {
     ? scrollToTop.classList.add("active")
     : scrollToTop.classList.remove("active");
 
-  let topBar = document.querySelector(".top");
+  //let topBar = document.querySelector(".top");
 
-  //if (windowScroll > topBar.offsetTop) {
-  // topBar.style.display = "none";
-  //}
-  //else {
-  //  topBar.style.display = "block";
-  //}
   toTop(scrollToTop);
 });
 
@@ -57,3 +73,29 @@ const toTop = (btn) => {
     });
   });
 };
+
+// product filter
+
+let productlis = document.querySelectorAll(".product-control li");
+let products = document.querySelectorAll(".products-container .products-item");
+
+function filterProducts(list) {
+  list.forEach((productli) => {
+    productli.addEventListener("click", (e) => {
+      e.preventDefault();
+      list.forEach((listItem) => listItem.classList.remove("active"));
+      e.currentTarget.classList.add("active");
+
+      // change the opacity of product item
+      products.forEach((product) => {
+        product.style.opacity = "10%";
+      });
+
+      document
+        .querySelectorAll(e.target.dataset.toggle)
+        .forEach((img) => (img.style.opacity = "100%"));
+    });
+  });
+}
+
+filterProducts(productlis);
