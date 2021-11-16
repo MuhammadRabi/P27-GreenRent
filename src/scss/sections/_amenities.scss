@@ -33,7 +33,7 @@
     }
     .main-heading {
       margin: 0 auto;
-      h3 {
+      h2 {
         padding: 20px 35px;
         border-radius: 0 0 15px 15px;
         @include media-breakpoint-only(xs) {
@@ -87,7 +87,7 @@
         @include media-breakpoint-only(xs) {
           padding: 25px;
         }
-        h5 {
+        h3 {
           color: var(--green-color);
         }
       }

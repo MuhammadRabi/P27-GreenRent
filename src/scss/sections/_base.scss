@@ -104,7 +104,7 @@ p {
   @include media-breakpoint-down(md) {
     margin: 5px auto;
   }
-  h3 {
+  h2 {
     color: var(--green-color);
     font-weight: 700;
     background-color: var(--green-lightest-color);
@@ -112,7 +112,7 @@ p {
     padding: 8px 10px;
     margin-bottom: var(--mb-8);
   }
-  h2 {
+  h3 {
     font-weight: 800;
     color: var(--black-color);
   }

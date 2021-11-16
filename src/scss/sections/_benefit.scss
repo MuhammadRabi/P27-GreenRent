@@ -25,6 +25,11 @@
         @include media-breakpoint-down(md) {
           max-width: 75%;
         }
+        .main-heading {
+          h3 {
+            text-align: left;
+          }
+        }
         p {
           margin-bottom: var(--mb-32);
           color: var(--dark-text-color);
