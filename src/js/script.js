@@ -1,3 +1,6 @@
+// initializing AOS Animation
+AOS.init();
+
 // initializing swiper slider
 var swiper = new Swiper(".swiper", {
   autoplay: {

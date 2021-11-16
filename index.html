@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap-grid.min.css"
         integrity="sha512-q0LpKnEKG/pAf1qi1SAyX0lCNnrlJDjAvsyaygu07x8OF4CEOpQhBnYiFW6YDUnOOcyAEiEYlV4S9vEc6akTEw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style of AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- main stylesheet-->
     <link rel="stylesheet" href="dist/css/main.css ">
     <!-- fontawesome -->
@@ -23,32 +25,6 @@
 
 <body>
     <!-- start header -->
-    <!--<section class="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="test">
-                        <div class="email">
-                            <i class="fas fa-envelope"></i><a href="mailto:einestien_1942@yahoo.com">
-                                einestien_1942@yahoo.com</a>
-                        </div>
-                        <address>
-                            <i class="fas fa-map-marker-alt"></i>
-                            5a lorem epsoum, NYC
-                        </address>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="socials">
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
--->
     <header>
         <div class="container">
             <a href="#" class="logo">Rent<span>Space</span>
@@ -78,7 +54,7 @@
     <section class="hero-area">
         <div class="overlay"></div>
         <div class="container">
-            <div class="hero-text">
+            <div class="hero-text" data-aos="zoom-in-up">
                 <h3>Lorem, ipsum dolor</h3>
                 <h1>The Spirit of Digital Agency.</h1>
                 <p>Vestibulum ac diam sit amet quam vehicula elementum amet est on dui. Nulla porttitor accumsan
@@ -131,7 +107,7 @@
                 <h3>hallo section head</h3>
                 <h2>Lorem, ipsum dolor.</h2>
             </div>
-            <div class="gallery-container">
+            <div class="gallery-container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                 <!-- item #01 -->
                 <div class="gallery-item">
                     <div class="overlay"></div>
@@ -183,7 +159,7 @@
     <!-- start benefits section -->
     <section class="benefits">
         <div class="content">
-            <div class="benefits-text">
+            <div class="benefits-text" data-aos="fade-right">
                 <div class="text-content">
                     <div class="main-heading">
                         <h3>hallo section head</h3>
@@ -218,37 +194,35 @@
         </div>
     </section>
     <!-- start contact -->
-    <section>
-        <div class="contact">
-            <form action="">
-                <div class="main-heading">
-                    <h3>contact us</h3>
-                </div>
-                <header>
-                    <span>call us <i class="fas fa-phone-alt"></i> <strong>+201066940972</strong></span>
-                    <br>
-                    <span> email at <i class="fas fa-envelope"></i> <strong>lorem12@yahoo.com</strong></span>
-                </header>
-                <input type="text" name="text" class="main-input" placeholder="full name">
-                <input type="email" name="text" class="main-input" placeholder="email address">
-                <input type="number" name="text" class="main-input" placeholder="phone number">
-                <textarea name="message" class="main-input" placeholder="message"></textarea>
-                <input type="submit" value="submit">
-            </form>
-            <article>
-                <div class="main-heading">
-                    <h3>hallo section head</h3>
-                    <h2>Lorem, ipsum dolor.</h2>
-                </div>
-                <h2>safe habitats</h2>
-                <header>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, eveniet.</header>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorum, quidem aliquam neque, vel
-                    quo quisquam expedita sequi, accusamus ut reiciendis esse velit itaque Lorem ipsum dolor, sit amet
-                    consectetur adipisicing elit. Omnis dolorum, quidem aliquam neque, vel
-                    quo quisquam expedita sequi, accusamus ut reiciendis esse velit itaque doloribus.</p>
-                <a href="#" class="button">book now <i class="fab fa-telegram-plane"></i></a>
-            </article>
-        </div>
+    <section class="contact">
+        <form action="">
+            <div class="main-heading">
+                <h3>contact us</h3>
+            </div>
+            <header>
+                <span>call us <i class="fas fa-phone-alt"></i> <strong>+201066940972</strong></span>
+                <br>
+                <span> email at <i class="fas fa-envelope"></i> <strong>lorem12@yahoo.com</strong></span>
+            </header>
+            <input type="text" name="text" class="main-input" placeholder="full name">
+            <input type="email" name="text" class="main-input" placeholder="email address">
+            <input type="number" name="text" class="main-input" placeholder="phone number">
+            <textarea name="message" class="main-input" placeholder="message"></textarea>
+            <input type="submit" value="submit">
+        </form>
+        <article>
+            <div class="main-heading">
+                <h3>hallo section head</h3>
+                <h2>Lorem, ipsum dolor.</h2>
+            </div>
+            <h2>safe habitats</h2>
+            <header>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, eveniet.</header>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis dolorum, quidem aliquam neque, vel
+                quo quisquam expedita sequi, accusamus ut reiciendis esse velit itaque Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Omnis dolorum, quidem aliquam neque, vel
+                quo quisquam expedita sequi, accusamus ut reiciendis esse velit itaque doloribus.</p>
+            <a href="#" class="button">book now <i class="fab fa-telegram-plane"></i></a>
+        </article>
     </section>
     <!-- start products -->
     <section class="products">
@@ -268,7 +242,7 @@
         </div>
         <div class="products-container">
             <!-- item #01 -->
-            <div class="all living products-item">
+            <div class="all living products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fa-person-booth"></i>
@@ -276,7 +250,7 @@
                 </div>
             </div>
             <!-- item #02 -->
-            <div class="all bed products-item">
+            <div class="all bed products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fa-cart-plus"></i>
@@ -284,7 +258,7 @@
                 </div>
             </div>
             <!-- item #03 -->
-            <div class="all  living products-item ">
+            <div class="all  living products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fa-couch"></i>
@@ -292,7 +266,7 @@
                 </div>
             </div>
             <!-- item #04 -->
-            <div class="all swim products-item">
+            <div class="all swim products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fa-couch"></i>
@@ -300,7 +274,7 @@
                 </div>
             </div>
             <!-- item #05 -->
-            <div class="all drawing products-item">
+            <div class="all drawing products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fas fa-chair"></i>
@@ -308,7 +282,7 @@
                 </div>
             </div>
             <!-- item #06 -->
-            <div class="all out products-item">
+            <div class="all out products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fa-toilet"></i>
@@ -316,7 +290,7 @@
                 </div>
             </div>
             <!-- item #07 -->
-            <div class="all living products-item">
+            <div class="all living products-item" data-aos="zoom-out">
                 <div class="overlay"></div>
                 <div class="item-text">
                     <i class="fas fa-fish"></i>
@@ -338,7 +312,7 @@
                             <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis necessitatibus
                                 unde
                                 cumque, nam alias nihil nulla quaerat ex voluptas laborum quasi maxime ad dolores?</q>
-                            <h4><span>Muhammad Rabi</span> - Egypt</h4>
+                            <h4><span>Joe Doe</span> - Egypt</h4>
                         </article>
                     </div>
                     <!-- review #02-->
@@ -348,7 +322,7 @@
                             <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis necessitatibus
                                 unde
                                 cumque, nam alias nihil nulla quaerat ex voluptas laborum quasi maxime ad dolores?</q>
-                            <h4><span>Malek</span> - Egypt</h4>
+                            <h4><span>Jessica James</span> - Spain</h4>
                         </article>
                     </div>
                     <!-- review #03-->
@@ -358,7 +332,7 @@
                             <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis necessitatibus
                                 unde
                                 cumque, nam alias nihil nulla quaerat ex voluptas laborum quasi maxime ad dolores?</q>
-                            <h4><span>Homa Rabi</span> - Egypt</h4>
+                            <h4><span>Sam David</span> - USA</h4>
                         </article>
                     </div>
                 </div>
@@ -370,7 +344,7 @@
     <!-- start Amenities section -->
     <section class="amenities">
         <div class="container">
-            <div class="content">
+            <div class="content" data-aos="fade-up" data-aos-duration="1000">
                 <div class="amenities-text">
                     <div class="text-content">
                         <div class="main-heading">
@@ -406,8 +380,11 @@
     </section>
     <!-- scroll to top button -->
     <div class="scroll-to-top"></div>
+    <!-- AOS Animation script-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper Slider script-->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
+    <!-- main script-->
     <script src="dist/all.js"></script>
 </body>
 
